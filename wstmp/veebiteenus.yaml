@@ -9,17 +9,17 @@ servers:
 paths:
   /raamatud:
     get:
-      summary: Raamatute
+      summary: Raamatute 
       operationId: raamatuNimekiri
       responses:
         '200':
-          description: raamatute list
+          description: raamatute list 
           content:
-            application/json:
+            application/json:    
               schema:
                 type: object
                 properties:
-                  raamatud:
+                  raamatud: 
                      type: array
                      items:
                        type: string
@@ -35,9 +35,9 @@ paths:
                 required:
                   - raamatu_id
                 properties:
-                  raamatu_id:
+                  raamatu_id: 
                     type: integer
-              examples:
+              examples: 
                  raamatuNaide:
                    summary: Raamatu loomise päringu näide
                    value: {"raamatu_id": 12345}
@@ -54,32 +54,26 @@ paths:
                 properties:
                   tulemus:
                     type: string
-                  raamatu_id:
+                  raamatu_id: 
                     type: integer
   /raamatud/{bookId}:
     get:
-      summary: Raamatu alla tõmbamine
+      summary: Raamatu allatõmbamine
       operationId: raamatuAllatombamine
       parameters:
         - name: bookId
           in: path
           required: true
-          description: allatõmmatava raamatu id
-          schema:
-            type: string
+          description: alla tõmmatud raamatu id
       responses:
         '200':
-          description: Allatõmbamine õnnestus
+          description: Raamatu tagastamine õnnestu
           content:
             text/plain:
               schema:
                 type: string
         '404':
           description: Raamatut ei leidu
-          content:
-            application/json: { }
-        '400':
-          description: sisendparameeter ei ole korrektne
           content:
             application/json: { }
     delete:
@@ -93,15 +87,15 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        '204': 
             description: Kustutamine õnnestus
             content:
                 application/json: {}
-        '404':
+        '404': 
             description: Raamatut ei leidu
             content:
                 application/json: {}
-        '400':
+        '400': 
             description: sisendparameeter ei ole korrektne
             content:
                 application/json: {}
@@ -121,9 +115,9 @@ paths:
                 properties:
                   sone:
                     type: string
-                  raamatu_id:
+                  raamatu_id: 
                     type: integer
-              examples:
+              examples: 
                  raamatuOtsing:
                    summary: Raamatu otsingu päringu näide
                    value: {"raamatu_id": 12345, "sone": "estonia"}
@@ -137,9 +131,9 @@ paths:
                 properties:
                   sone:
                     type: string
-                  raamatu_id:
+                  raamatu_id: 
                     type: integer
-                  leitud:
+                  leitud: 
                     type: integer
         '400':
           description: Mitte korrektne sisend
