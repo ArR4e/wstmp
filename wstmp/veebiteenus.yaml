@@ -65,6 +65,8 @@ paths:
           in: path
           required: true
           description: alla tõmmatud raamatu id
+          schema:
+            type: string
       responses:
         '200':
           description: Raamatu tagastamine õnnestu
